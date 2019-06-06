@@ -19,7 +19,7 @@
         "PortalEmail": {
             "Type": "String",
             "Description": "Address from which emails will be sent from to approvers.",
-            "Default": "marc.pearce@shl.com"
+            "Default": "workspaces@shl.limited"
         },
         "ApproverEmail": {
             "Type": "String",
