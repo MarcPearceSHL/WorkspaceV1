@@ -68,7 +68,7 @@ var Dashboard = window.Dashboard || {};
         };
         var attributeEmail = new AmazonCognitoIdentity.CognitoUserAttribute(dataEmail);
 
-        userPool.signUp(toUsername(email), password, [attributeEmail], null,
+        userPool.signUp(Username, password, [attributeEmail], null,
             function signUpCallback(err, result) {
                 if (!err) {
                     onSuccess(result);
@@ -81,7 +81,7 @@ var Dashboard = window.Dashboard || {};
 
     function signin(email, password, onSuccess, onFailure) {
         var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails({
-            Username: toUsername(email),
+            Username: Username
             Password: password
         });
 
@@ -107,10 +107,6 @@ var Dashboard = window.Dashboard || {};
             Username: toUsername(email),
             Pool: userPool
         });
-    }
-
-    function toUsername(email) {
-        return email.replace('@', '-at-');
     }
 
     /*
